@@ -1,24 +1,36 @@
-class Box<T> {
-    private T value;
+import java.util.ArrayList;
 
-    public void setValue(T value) {
-        this.value = value;
+class DataStore<T> {
+    private ArrayList<T> list = new ArrayList<>();
+
+    public void addData(T data) {
+        list.add(data);
     }
 
-    public T getValue() {
-        return value;
+    public void displayData() {
+        for (T item : list) {
+            System.out.println(item);
+        }
     }
 }
 
-public class Generics{
+public class GenericsArrayList{
     public static void main(String[] args) {
 
-        Box<String> stringBox = new Box<>();
-        stringBox.setValue("Hello, BSIS!");
-        System.out.println("String Value: " + stringBox.getValue());
+        DataStore<String> names = new DataStore<>();
+        names.addData("Jastin");
+        names.addData("Alexus");
+        names.addData("James");
 
-        Box<Integer> intBox = new Box<>();
-        intBox.setValue(100);
-        System.out.println("Integer Value: " + intBox.getValue());
+        System.out.println("Names:");
+        names.displayData();
+
+        DataStore<Integer> numbers = new DataStore<>();
+        numbers.addData(10);
+        numbers.addData(20);
+        numbers.addData(30);
+
+        System.out.println("\nNumbers:");
+        numbers.displayData();
     }
 }
