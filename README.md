@@ -1,2 +1,24 @@
-# Bautista-ChristianVave-Activities
-I’m just someone who’s trying to grow a little every day. I value my faith, my studies, and the people I love. I enjoy sharing ideas, learning new things, and expressing myself through writing and reporting. I’m not perfect, but I’m sincere, hardworking, and always willing to improve while staying true to who I am.
+class Box<T> {
+    private T value;
+
+    public void setValue(T value) {
+        this.value = value;
+    }
+
+    public T getValue() {
+        return value;
+    }
+}
+
+public class GenericsExample {
+    public static void main(String[] args) {
+
+        Box<String> stringBox = new Box<>();
+        stringBox.setValue("Hello, BSIS!");
+        System.out.println("String Value: " + stringBox.getValue());
+
+        Box<Integer> intBox = new Box<>();
+        intBox.setValue(100);
+        System.out.println("Integer Value: " + intBox.getValue());
+    }
+}
